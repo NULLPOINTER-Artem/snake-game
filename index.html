@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Game</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        background-color: #000;
+      }
+      #game-container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: row-reverse;
+      }
+      canvas {
+        border: 30px solid #a96a0e;
+        height: calc(100vh - 60px);
+        width: 70%;
+      }
+      .game-menu {
+        width: 30%;
+        height: calc(100vh - 60px);
+        background-color: #077482;
+        padding: 30px 0;
+      }
+      .game-menu__heading {
+        color: #55d292;
+        text-transform: capitalize;
+        font-size: 42px;
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .game-menu__score {
+        background-color: #074e5c;
+        color: #fff;
+        font-size: 32px;
+        padding: 10px 15px;
+        display: flex;
+
+        margin-bottom: 24px;
+      }
+      .game-menu__score-name {
+        width: 40%;
+      }
+      .game-menu__score-val {
+        margin-left: auto;
+        text-align: center;
+        width: 60%;
+      }
+      .game-menu__mode-list {
+        background-color: #195756;
+        padding: 10px 15px;
+      }
+      .game-menu__mode-item {
+        color: #fff;
+        font-weight: 500;
+        font-size: 32px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .game-menu__mode-item > input {
+        margin-right: 20px;
+        cursor: pointer;
+      }
+
+      .game-menu__btn,
+      .game-menu__actions-btn {
+        background-color: #195756;
+        padding: 25px;
+        color: #fff;
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 32px;
+        cursor: pointer;
+      }
+      .game-menu__btn {
+        display: block;
+        margin: 32px auto 0 auto;
+      }
+      .game-menu__actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 32px;
+      }
+      .game-menu__actions-btn {
+        margin-left: 20px;
+      }
+      .game-menu__actions-btn:first-child {
+        margin-left: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-container">
+      <div id="game-menu" class="game-menu">
+        <h1 class="game-menu__heading">Snake Game</h1>
+
+        <div class="game-menu__score">
+          <span class="game-menu__score-name">Best Score :</span>
+          <span class="game-menu__score-val" data-best-score>0</span>
+        </div>
+
+        <div class="game-menu__score">
+          <span class="game-menu__score-name">Current Score :</span>
+          <span class="game-menu__score-val" data-current-score>0</span>
+        </div>
+
+        <div class="game-menu__mode-list">
+          <div class="game-menu__mode-item">
+            <input type="radio" name="mode" id="classic" value="classic" />
+            <label for="classic">Classic</label>
+          </div>
+        </div>
+
+        <button type="button" class="game-menu__btn" data-btn-menu>Menu</button>
+
+        <div class="game-menu__actions">
+          <button type="button" class="game-menu__actions-btn" data-btn-play>
+            Play
+          </button>
+          <button type="button" class="game-menu__actions-btn" data-btn-exit>
+            Exit
+          </button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
